@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Export</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, select, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("name").value = localStorage.getItem("name") || "";
+            document.getElementById("options").value = localStorage.getItem("option") || "Du hast viel geübt und schreibst tolle Geschichten.";
+            document.getElementById("math-options").value = localStorage.getItem("mathOption") || "Du hast fleißig geübt und kannst Zahlen sicher anwenden.";
+        });
+
+        function saveToLocalStorage() {
+            localStorage.setItem("name", document.getElementById("name").value);
+            localStorage.setItem("option", document.getElementById("options").value);
+            localStorage.setItem("mathOption", document.getElementById("math-options").value);
+        }
+    </script>
+</head>
+<body>
+    <h2>PDF Export Tool</h2>
+    <label for="name">Name des Kindes </label>
+    <input type="text" id="name" placeholder="Deinen Namen eingeben..." oninput="saveToLocalStorage()">
+    <br><br>
+    <label for="options">Deutsch:</label>
+    <select id="options" onchange="saveToLocalStorage()">
+        <option value="Du hast viel geübt und schreibst tolle Geschichten.">Du hast viel geübt und schreibst tolle Geschichten.</option>
+        <option value="Du hast kreative Ideen und setzt sie gut um.">Du hast kreative Ideen und setzt sie gut um.</option>
+        <option value="Deine Ausdrucksweise ist sehr beeindruckend.">Deine Ausdrucksweise ist sehr beeindruckend.</option>
+    </select>
+    <br><br>
+    <label for="math-options">Mathe:</label>
+    <select id="math-options" onchange="saveToLocalStorage()">
+        <option value="Du hast fleißig geübt und kannst Zahlen sicher anwenden.">Du hast fleißig geübt und kannst Zahlen sicher anwenden.</option>
+        <option value="Du kannst mathematische Muster schnell erkennen.">Du kannst mathematische Muster schnell erkennen.</option>
+        <option value="Du findest kreative Lösungswege für mathematische Probleme.">Du findest kreative Lösungswege für mathematische Probleme.</option>
+    </select>
+    <br><br>
+    <button onclick="generatePDF()">Als PDF exportieren</button>
+
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF({ format: 'a4' });
+            
+            let name = document.getElementById("name").value || "Export";
+            let option = document.getElementById("options").value;
+            let mathOption = document.getElementById("math-options").value;
+            
+            doc.setFont("helvetica", "bold");
+            doc.setFontSize(22);
+            doc.setTextColor(0, 0, 0);
+            doc.text("Exportierte Daten", 20, 30);
+            
+            doc.setFont("helvetica", "normal");
+            doc.setFontSize(16);
+            doc.text("Name:", 20, 50);
+            doc.text(name, 60, 50);
+            
+            doc.text("Deutsch:", 20, 70);
+            doc.text(option, 60, 70);
+            
+            doc.text("Mathe:", 20, 90);
+            doc.text(mathOption, 60, 90);
+            
+            doc.setFontSize(12);
+            doc.text("Dieses PDF wurde automatisch generiert.", 20, 270);
+            
+            let img = new Image();
+            img.src = 'https://www.ggsbalthasar.de/wp-content/uploads/2017/12/ggs-logo.png';
+            img.crossOrigin = "anonymous";
+            img.onload = function () {
+                let aspectRatio = img.width / img.height;
+                let imgWidth = 40;
+                let imgHeight = imgWidth / aspectRatio;
+                doc.addImage(img, 'PNG', 150, 250, imgWidth, imgHeight);
+                
+                // Alternative Methode für iOS
+                if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g)) {
+                    let blob = doc.output("blob");
+                    let reader = new FileReader();
+                    reader.readAsDataURL(blob);
+                    reader.onloadend = function () {
+                        let a = document.createElement("a");
+                        a.href = reader.result;
+                        a.download = name + ".pdf";
+                        a.click();
+                    };
+                } else {
+                    doc.save(name + ".pdf");
+                }
+            };
+            img.onerror = function() {
+                alert("Fehler beim Laden des Bildes. Bitte versuche es erneut.");
+            };
+        }
+    </script>
+</body>
+</html>
