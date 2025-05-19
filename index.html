@@ -3,65 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Kompetenzformular</title>
-	<style>
-		.disabled-input {
-			opacity: 0.5;
-			background-color: #eee;
-		}
-		.disabled {
-			opacity: 0.4;
-			pointer-events: none;
-		}
-		.button {
-			margin-top: 1em;
-			background: #333;
-			color: white;
-		}
-
-		body {
-			display: flex;
-			font-family: sans-serif;
-			margin: 0;
-		}
-		.section {
-			width: 50%;
-			padding: 1em;
-			box-sizing: border-box;
-		}
-		.left {
-			background: #f9f9f9;
-		}
-		.right {
-			background: #fff;
-			overflow-y: auto;
-			height: 100vh;
-		}
-		.kompetenz {
-			background: #e0e0e0;
-			margin: 0.5em 0;
-			padding: 0.5em;
-			border-radius: 4px;
-			cursor: grab;
-		}
-		.dropzone {
-			border: 2px dashed #aaa;
-			padding: 1em;
-			margin-bottom: 0.5em;
-			border-radius: 4px;
-			min-height: 40px;
-		}
-		textarea {
-			width: 100%;
-			box-sizing: border-box;
-			margin-bottom: 1em;
-		}
-		.kind-block {
-			background: #f1f1f1;
-			padding: 1em;
-			margin-bottom: 2em;
-			border-radius: 8px;
-		}
-	</style>
+	<link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 </head>
 <body>
 
@@ -70,6 +13,7 @@
 		<h1>Lehrkraft</h1>
 		<input type="text" placeholder="Name der Lehrkraft">
 		<input type="date" placeholder="Datum">
+		<button class="button">PDF exportieren</button>
 	</div>
 	<div class="bottom">
 		<h1>Kompetenzen</h1>
@@ -84,140 +28,26 @@
 		<textarea class="kind-name" placeholder="Name des Kindes"></textarea>
 		<div class="kompetenzbereich">
 			<h2>Kompetenzen</h2>
-			<div><p>Kompetenz 1</p><div class="dropzone"></div><textarea placeholder="Alternativ: individuelle Kompetenz"></textarea></div>
+			<div><p>Kompetenz 1</p><div class="dropzone sortable"></div><textarea></textarea></div>
 		</div>
 		<div class="lernzielbereich">
 			<h2>Lernziele</h2>
-			<div><p>Lernziel 1</p><div class="dropzone"></div><textarea placeholder="Alternativ: individuelles Lernziel"></textarea></div>
+			<div><p>Lernziel 1</p><div class="dropzone sortable"></div><textarea></textarea></div>
 		</div>
 	</div>
-  <div class="kind-block" data-kind="2">
+  	<div class="kind-block" data-kind="2">
 		<textarea class="kind-name" placeholder="Name des Kindes"></textarea>
 		<div class="kompetenzbereich">
 			<h2>Kompetenzen</h2>
-			<div><p>Kompetenz 1</p><div class="dropzone"></div><textarea></textarea></div>
+			<div><p>Kompetenz 1</p><div class="dropzone sortable"></div><textarea></textarea></div>
 		</div>
 		<div class="lernzielbereich">
 			<h2>Lernziele</h2>
-			<div><p>Lernziel 1</p><div class="dropzone"></div><textarea></textarea></div>
+			<div><p>Lernziel 1</p><div class="dropzone sortable"></div><textarea></textarea></div>
 		</div>
 	</div>
 </div>
 
-<script>
-// Beim Laden: alle leeren Dropzonen mit Platzhalter füllen
-window.addEventListener('DOMContentLoaded', () => {
-	document.querySelectorAll('.dropzone').forEach(zone => {
-		if (!zone.textContent.trim()) {
-			zone.textContent = 'Ziehe in dieses Feld eine Kompetenz oder ein Lernziel';
-		}
-	});
-});
-let draggedText = null;
-
-const kompetenzen = document.querySelectorAll('.kompetenz');
-const dropzones = document.querySelectorAll('.dropzone');
-
-// Desktop Drag & Drop
-kompetenzen.forEach(elem => {
-	elem.addEventListener('dragstart', e => {
-		e.dataTransfer.setData('text/plain', e.target.textContent);
-	});
-});
-
-dropzones.forEach(zone => {
-	zone.addEventListener('dragover', e => e.preventDefault());
-	zone.addEventListener('drop', e => {
-		e.preventDefault();
-		const data = e.dataTransfer.getData('text/plain');
-		zone.innerHTML = `<button class="remove-btn">&times;</button>${data}`;
-		zone.classList.add('filled');
-	});
-});
-
-// Touch-Unterstützung für iOS (iPhone/iPad)
-kompetenzen.forEach(elem => {
-	elem.addEventListener('touchstart', e => {
-		draggedText = elem.textContent;
-		elem.style.opacity = 0.5;
-	});
-
-	elem.addEventListener('touchend', () => {
-		draggedText = null;
-		elem.style.opacity = 1;
-	});
-});
-
-dropzones.forEach(zone => {
-	zone.addEventListener('touchmove', e => {
-		e.preventDefault();
-	});
-
-	zone.addEventListener('touchend', e => {
-		if (!draggedText) return;
-		zone.innerHTML = `<button class="remove-btn">&times;</button>${draggedText}`;
-		zone.classList.add('filled');
-		draggedText = null;
-	});
-});
-
-// Entfernen-Funktion für Dropzone-Inhalte
-
-document.addEventListener('click', e => {
-	if (e.target.classList.contains('remove-btn')) {
-		const zone = e.target.closest('.dropzone');
-		zone.textContent = 'Ziehe in dieses Feld eine Kompetenz oder ein Lernziel';
-		zone.classList.remove('filled');
-
-		// Textfeld reaktivieren
-		const textarea = zone.nextElementSibling;
-		if (textarea) {
-			textarea.disabled = false;
-			textarea.classList.remove('disabled-input');
-		}
-	}
-});
-
-
-// Logik: Textarea deaktiviert Dropzone und umgekehrt
-
-dropzones.forEach(zone => {
-	const textarea = zone.nextElementSibling;
-	if (!textarea) return;
-
-	// Wenn Text eingegeben wird, Dropzone deaktivieren
-	textarea.addEventListener('input', () => {
-		if (textarea.value.trim() !== '') {
-			zone.textContent = 'Deaktiviert';
-			zone.classList.add('disabled');
-			zone.classList.remove('filled');
-			zone.style.pointerEvents = 'none';
-		} else {
-			zone.textContent = 'Ziehe in dieses Feld eine Kompetenz oder ein Lernziel';
-			zone.classList.remove('disabled');
-			zone.style.pointerEvents = 'auto';
-		}
-	});
-
-	// Wenn etwas gedroppt wird, Textarea deaktivieren
-	zone.addEventListener('drop', () => {
-		if (textarea) {
-			textarea.value = '';
-			textarea.disabled = true;
-			textarea.classList.add('disabled-input');
-		}
-	});
-
-	// Auch für Touch-Drop
-	zone.addEventListener('touchend', () => {
-		if (textarea) {
-			textarea.value = '';
-			textarea.disabled = true;
-			textarea.classList.add('disabled-input');
-		}
-	});
-});
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
