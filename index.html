@@ -5,6 +5,7 @@
 	<title>Kompetenzformular</title>
 	<link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+
 </head>
 <body>
 
@@ -14,7 +15,8 @@
         <input type="text" class="teacher-name" placeholder="Name der Lehrkraft">
         <input type="date" class="date-field">
 
-        <button class="button">PDF exportieren</button>
+        <button type="button" class="button" id="export-pdf">PDF exportieren</button>
+
     </div>
 	<div class="bottom">
 		<h1>Kompetenzen</h1>
@@ -50,5 +52,11 @@
 </div>
 
 <script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+	const { jsPDF } = window.jspdf;
+</script>
+<script src="pdf-export.js"></script>
+
 </body>
 </html>
