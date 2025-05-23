@@ -43,14 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				let y = 20;
 				doc.text(`${className}`, 20, y);
-				doc.text(`${teacherName}`, 100, y);
+				doc.text(`${teacherName}`, 91, 280);
 				y += 8;
-				doc.text(`${date}`, 20, y);
+				doc.text(`${date}`, 42, 270);
 				y += 12;
 
 				const kindName = block.querySelector('.kind-name')?.value || '';
 				doc.setFontSize(14);
-				doc.text(`${kindName}`, 20, y);
+				doc.text(`${kindName}`, 18, 28);
 				y += 10;
 
 				// ▶️ Kompetenzen
