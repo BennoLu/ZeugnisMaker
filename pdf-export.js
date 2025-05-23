@@ -42,20 +42,20 @@ document.addEventListener('DOMContentLoaded', () => {
 				doc.setFontSize(12);
 
 				let y = 20;
-				doc.text(`Klasse: ${className}`, 20, y);
-				doc.text(`Lehrkraft: ${teacherName}`, 100, y);
+				doc.text(`${className}`, 20, y);
+				doc.text(`${teacherName}`, 100, y);
 				y += 8;
-				doc.text(`Datum: ${date}`, 20, y);
+				doc.text(`${date}`, 20, y);
 				y += 12;
 
 				const kindName = block.querySelector('.kind-name')?.value || '';
 				doc.setFontSize(14);
-				doc.text(`Name des Kindes: ${kindName}`, 20, y);
+				doc.text(`${kindName}`, 20, y);
 				y += 10;
 
 				// ▶️ Kompetenzen
 				doc.setFontSize(12);
-				doc.text('Kompetenzen:', 20, y);
+				doc.text('', 20, y);
 				y += 6;
 
 				block.querySelectorAll('.kompetenzbereich .dropzone').forEach(zone => {
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				y += 8;
 
 				// ▶️ Lernziele
-				doc.text('Lernziele:', 20, y);
+				doc.text('', 20, y);
 				y += 6;
 
 				block.querySelectorAll('.lernzielbereich .dropzone').forEach(zone => {
