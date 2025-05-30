@@ -267,7 +267,7 @@ textarea.disabled-input {
 
 .pdf-page .class-schule {
 	position: absolute;
-	left: 152mm;
+	left: 148mm;
 	top: 38mm;
 	font-size: 17px;
   }
@@ -276,15 +276,17 @@ textarea.disabled-input {
 
 .pdf-page .class-name {
   position: absolute;
-  left: 124mm;
+  left: 120mm;
   top: 38mm;
   font-size: 17px;
 }
 
 .pdf-page .teacher-name {
   position: absolute;
-  left: 91mm;
+  left: 42mm;
   top: 279mm;
+  width: 471px;
+  text-align: center;
   font-size: 17px;
 }
 

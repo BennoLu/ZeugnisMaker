@@ -1,3 +1,31 @@
+document.getElementById('export-pdf').addEventListener('click', function (e) {
+	// grab & trim values
+	const klasse = document.querySelector('.class-name').value.trim();
+	const lehrer = document.querySelector('.teacher-name').value.trim();
+	const datum = document.querySelector('.date-field').value.trim();
+
+	// collect missing fields
+	const missing = [];
+	if (!klasse) missing.push('Klasse');
+	if (!lehrer) missing.push('Lehrkraft');
+	if (!datum) missing.push('Datum');
+
+	if (missing.length) {
+		// prevent the default export logic
+		e.preventDefault();
+		// alert which fields
+		alert('Bitte füllen Sie folgende Felder aus:\n• ' + missing.join('\n• '));
+		return;
+	}
+
+	// all good — call your export logic here (or let your existing handler run)
+	// exportPdf(); // <-- whatever your PDF-export function is
+});
+
+
+
+
+
 // Dropzones aktivieren
 document.querySelectorAll('.dropzone').forEach(zone => {
 	zone.dataset.placeholder = 'Zieh einen Satz von links hier rein';
@@ -293,3 +321,7 @@ document.querySelectorAll('.kind-block').forEach(block => {
 		block.style.backgroundColor = colorMap[kind];
 	}
 });
+
+
+
+
