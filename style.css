@@ -134,7 +134,7 @@ body {
 .section {
 	width: 50%;
 	box-sizing: border-box;
-	padding: 40px 55px 55px 55px;
+	padding: 40px 65px 55px 65px;
 }
 
 .left {
@@ -157,7 +157,7 @@ body {
 	margin: 0.6em 0;
 	padding: 1em 1.3em 1em 1.3em;
 	border: 1px solid #0000002a;
-	font-size: 18px;
+	font-size: 17px;
 	line-height: 24px;
 	border-radius: 6px;
 	cursor: grab;
