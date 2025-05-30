@@ -1,27 +1,30 @@
-document.getElementById('export-pdf').addEventListener('click', function (e) {
-	// grab & trim values
-	const klasse = document.querySelector('.class-name').value.trim();
-	const lehrer = document.querySelector('.teacher-name').value.trim();
-	const datum = document.querySelector('.date-field').value.trim();
+document.addEventListener('DOMContentLoaded', function () {
+	const btn = document.getElementById('export-pdf');
+	btn.addEventListener(
+		'click',
+		function (e) {
+			// 1) grab & trim values
+			const klasse = document.querySelector('.class-name').value.trim();
+			const lehrer = document.querySelector('.teacher-name').value.trim();
+			const datum = document.querySelector('.date-field').value.trim();
 
-	// collect missing fields
-	const missing = [];
-	if (!klasse) missing.push('Klasse');
-	if (!lehrer) missing.push('Lehrkraft');
-	if (!datum) missing.push('Datum');
+			// 2) collect missing
+			const missing = [];
+			if (!klasse) missing.push('Klasse');
+			if (!lehrer) missing.push('Lehrkraft');
+			if (!datum) missing.push('Datum');
 
-	if (missing.length) {
-		// prevent the default export logic
-		e.preventDefault();
-		// alert which fields
-		alert('Bitte füllen Sie folgende Felder aus:\n• ' + missing.join('\n• '));
-		return;
-	}
-
-	// all good — call your export logic here (or let your existing handler run)
-	// exportPdf(); // <-- whatever your PDF-export function is
+			if (missing.length) {
+				// stop everything (no export, no other handler)
+				e.preventDefault();
+				e.stopImmediatePropagation();
+				alert('Bitte füllen Sie folgende Felder aus:\n• ' + missing.join('\n• '));
+			}
+			// else: do nothing, html2pdf-export.js will run as normal
+		},
+      /* useCapture = */ true
+	);
 });
-
 
 
 
