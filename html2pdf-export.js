@@ -92,14 +92,14 @@ document.getElementById("export-pdf").addEventListener("click", async () => {
 		container.appendChild(page);
 	}
 
-	// generate PDF: use CSS breaks only
+	// generate PDF: use CSS breaks only, with 'after' to avoid extra blank pages
 	await html2pdf()
 		.set({
 			margin: 0,
 			filename: 'zeugnisse.pdf',
 			html2canvas: { scale: 3, useCORS: true },
 			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
-			pagebreak: { mode: ['css'], before: '.pdf-page' }
+			pagebreak: { mode: ['css'], after: '.pdf-page' }
 		})
 		.from(container)
 		.save();
