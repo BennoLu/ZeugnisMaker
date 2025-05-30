@@ -42,7 +42,9 @@ document.getElementById("export-pdf").addEventListener("click", async () => {
 	if (txt || cmt) {
         const item = document.createElement("div");
 	item.classList.add("item-wrapper");
-	item.innerHTML = `<p>${txt}${cmt}</p>`;
+	const p = document.createElement("p");
+	p.textContent = txt + cmt; // safely inserts any “<”, “&”, etc.
+	item.appendChild(p);
 	komCont.appendChild(item);
       }
     });
@@ -57,7 +59,9 @@ document.getElementById("export-pdf").addEventListener("click", async () => {
 	if (txt || cmt) {
         const item = document.createElement("div");
 	item.classList.add("item-wrapper");
-	item.innerHTML = `<p>${txt}${cmt}</p>`;
+	const p = document.createElement("p");
+	p.textContent = txt + cmt; // safely inserts any “<”, “&”, etc.
+	item.appendChild(p);
 	lernCont.appendChild(item);
       }
     });
