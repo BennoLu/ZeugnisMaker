@@ -225,7 +225,7 @@ textarea.disabled-input {
 
 
 
-.kind-name{
+.kind-block .kind-name{
 	font-size: 55px;
 	font-weight: 500;
 	color: rgba(0, 0, 0, 0.862);
@@ -246,7 +246,7 @@ textarea.disabled-input {
 .pdf-page .kind-name {
   position: absolute;
   left: 18mm;
-  top: 27mm;
+  top: 26mm;
   font-size: 33px;
   font-weight: 700;
   letter-spacing: 0.03em;
@@ -257,7 +257,7 @@ textarea.disabled-input {
 .pdf-page .kind-zeugnis {
 	position: absolute;
 	left: 18mm;
-	top: 16mm;
+	top: 15mm;
 	font-size: 33px;
 	font-weight: 700;
 	letter-spacing: 0.03em;
@@ -284,14 +284,14 @@ textarea.disabled-input {
 .pdf-page .teacher-name {
   position: absolute;
   left: 91mm;
-  top: 281mm;
+  top: 279mm;
   font-size: 17px;
 }
 
 .pdf-page .pdf-date {
   position: absolute;
   left: 42mm;
-  top: 270mm;
+  top: 268mm;
   font-size: 17px;
 }
 
@@ -309,7 +309,7 @@ textarea.disabled-input {
 
 .kompetenzen-container {
 	position: absolute;
-	top: 50mm;
+	top: 48mm;
 	/* anpassen, wo Kompetenz-Block stehen soll */
 	left: 39mm;
 	width: 150mm;
@@ -317,7 +317,7 @@ textarea.disabled-input {
 
 .lernziele-container {
 	position: absolute;
-	top: 195mm;
+	top: 192mm;
 	/* anpassen, wo Lernziel-Block stehen soll */
 	left: 52mm;
 	width: 138mm;
