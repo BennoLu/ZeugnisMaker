@@ -97,7 +97,7 @@ document.getElementById("export-pdf").addEventListener("click", async () => {
 		.set({
 			margin: 0,
 			filename: 'zeugnisse.pdf',
-			html2canvas: { scale: 3, useCORS: true },
+			html2canvas: { scale: 2, useCORS: true },
 			jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
 			pagebreak: { mode: ['css'], after: '.pdf-page' }
 		})
