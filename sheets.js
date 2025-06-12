@@ -35,17 +35,20 @@ async function loadSheet(sheet) {
 				zellenWerte.push(wert);
 			}
 
-			while (zellenWerte.length > 0 && zellenWerte[zellenWerte.length - 1] === '') {
+			while (zellenWerte.length > 0 && zellenWerte[zellenWerte.length - 1].trim() === '') {
 				zellenWerte.pop();
 			}
 
 			if (zellenWerte.length > 0) {
 				zellenWerte.forEach(wert => {
-					let cellDiv = document.createElement('div');
-					cellDiv.className = 'kompetenz';
-					cellDiv.draggable = "true";
-					cellDiv.textContent = wert === '' ? 'Leer' : wert;
-					alleSheetsDiv.appendChild(cellDiv);
+					const trimmedWert = wert.trim();
+					if (trimmedWert !== '') {
+						let cellDiv = document.createElement('div');
+						cellDiv.className = 'kompetenz';
+						cellDiv.draggable = "true";
+						cellDiv.textContent = trimmedWert;
+						alleSheetsDiv.appendChild(cellDiv);
+					}
 				});
 			}
 		}
