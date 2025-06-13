@@ -1,33 +1,33 @@
 document.addEventListener('DOMContentLoaded', function () {
-	const btn = document.getElementById('export-pdf');
-	btn.addEventListener(
-		'click',
-		function (e) {
-			// 1) grab & trim values
-			const klasse = document.querySelector('.class-name').value.trim();
-			const lehrer = document.querySelector('.teacher-name').value.trim();
-			const datum = document.querySelector('.date-field').value.trim();
+	// Export-Buttons prüfen Pflichtfelder
+	const exportButtons = ['export-1', 'export-2', 'export-3'];
 
-			// 2) collect missing
-			const missing = [];
-			if (!klasse) missing.push('Klasse');
-			if (!lehrer) missing.push('Lehrkraft');
-			if (!datum) missing.push('Datum');
+	exportButtons.forEach(id => {
+		const btn = document.getElementById(id);
+		if (!btn) return;
 
-			if (missing.length) {
-				// stop everything (no export, no other handler)
-				e.preventDefault();
-				e.stopImmediatePropagation();
-				alert('Bitte füllen Sie folgende Felder aus:\n• ' + missing.join('\n• '));
-			}
-			// else: do nothing, html2pdf-export.js will run as normal
-		},
-      /* useCapture = */ true
-	);
+		btn.addEventListener(
+			'click',
+			function (e) {
+				const klasse = document.querySelector('.class-name')?.value.trim();
+				const lehrer = document.querySelector('.teacher-name')?.value.trim();
+				const datum = document.querySelector('.date-field')?.value.trim();
+
+				const missing = [];
+				if (!klasse) missing.push('Klasse');
+				if (!lehrer) missing.push('Lehrkraft');
+				if (!datum) missing.push('Datum');
+
+				if (missing.length) {
+					e.preventDefault();
+					e.stopImmediatePropagation();
+					alert('Bitte füllen Sie folgende Felder aus:\n• ' + missing.join('\n• '));
+				}
+			},
+			true
+		);
+	});
 });
-
-
-
 
 // Dropzones aktivieren
 document.querySelectorAll('.dropzone').forEach(zone => {
@@ -37,12 +37,11 @@ document.querySelectorAll('.dropzone').forEach(zone => {
 		group: 'kompetenzen',
 		animation: 150,
 		sort: false,
-		draggable: '.kompetenz',    // nur .kompetenz-Items sind ziehbar
+		draggable: '.kompetenz',
 		onAdd: (evt) => {
 			const newItem = evt.item;
 			const zone = evt.to;
 
-			// Nur 1 Element behalten
 			[...zone.children].forEach(child => {
 				if (child !== newItem && child.classList.contains('kompetenz')) {
 					child.remove();
@@ -68,7 +67,7 @@ new Sortable(document.querySelector('.bottom'), {
 		put: false
 	},
 	sort: false,
-	draggable: '.kompetenz'      // nur .kompetenz-Items können gezogen werden
+	draggable: '.kompetenz'
 });
 
 // Entfernen-Button für Einträge
@@ -171,18 +170,13 @@ function saveDataToLocalStorage() {
 		return { kindName, kompetenzen, lernziele };
 	});
 
-	localStorage.setItem(
-		'kompetenzformular_global',
-		JSON.stringify(globalFields)
-	);
+	localStorage.setItem('kompetenzformular_global', JSON.stringify(globalFields));
 	localStorage.setItem('kompetenzformular', JSON.stringify(data));
 }
 
 // 🔁 Laden aus localStorage
 function loadDataFromLocalStorage() {
-	const global = JSON.parse(
-		localStorage.getItem('kompetenzformular_global')
-	);
+	const global = JSON.parse(localStorage.getItem('kompetenzformular_global'));
 	if (global) {
 		document.querySelector('.class-name').value = global.className || '';
 		document.querySelector('.teacher-name').value = global.teacherName || '';
@@ -198,10 +192,7 @@ function loadDataFromLocalStorage() {
 
 		block.querySelector('.kind-name').value = data.kindName || '';
 
-		// restore Kompetenzen
-		block.querySelectorAll(
-			'.kompetenzbereich .dropzone'
-		).forEach((zone, i) => {
+		block.querySelectorAll('.kompetenzbereich .dropzone').forEach((zone, i) => {
 			zone.innerHTML = '';
 			const k = data.kompetenzen[i];
 			if (!k) return;
@@ -221,10 +212,7 @@ function loadDataFromLocalStorage() {
 			}
 		});
 
-		// restore Lernziele
-		block.querySelectorAll(
-			'.lernzielbereich .dropzone'
-		).forEach((zone, i) => {
+		block.querySelectorAll('.lernzielbereich .dropzone').forEach((zone, i) => {
 			zone.innerHTML = '';
 			const l = data.lernziele[i];
 			if (!l) return;
@@ -262,21 +250,9 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // 🔔 Speichern bei Änderungen
-document
-	.querySelector('.class-name')
-	?.addEventListener('input', saveDataToLocalStorage);
-document
-	.querySelector('.teacher-name')
-	?.addEventListener('input', saveDataToLocalStorage);
-document
-	.querySelector('.date-field')
-	?.addEventListener('input', saveDataToLocalStorage);
+document.querySelector('.class-name')?.addEventListener('input', saveDataToLocalStorage);
+document.querySelector('.teacher-name')?.addEventListener('input', saveDataToLocalStorage);
+document.querySelector('.date-field')?.addEventListener('input', saveDataToLocalStorage);
 document.querySelectorAll('.kind-name').forEach(input => {
 	input.addEventListener('input', saveDataToLocalStorage);
 });
-  
-
-
-
-
-
