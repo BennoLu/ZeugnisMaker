@@ -92,18 +92,25 @@
 
 
 
-.button {
+.button_container {
 	z-index: 100;
+	display: flex;
+	gap: 10px;
 	position: fixed;
 	margin-top: 1em;
-	height: 50px;
-	font-size: 20px;
-	width: 220px;
+	border: none;
+}
+
+button{
+	height: 45px;
+	font-size: 18px;
+	width: 140px;
 	background: #48484b;
 	color: white;
 	border: none;
 	border-radius: 6px;
 }
+
 
 .class-name{
 	width: 90px;
