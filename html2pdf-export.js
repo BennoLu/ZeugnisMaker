@@ -13,7 +13,7 @@ function setupPDFExport(buttonId, rangeStart, rangeEnd, fileName) {
 		}
 
 		const isMobile = /Mobi|Android/i.test(navigator.userAgent);
-		const scale = isMobile ? 1.5 : 2.5;
+		const scale = isMobile ? 1.5 : 2;
 
 		// Clear & show container
 		container.innerHTML = "";
@@ -129,6 +129,7 @@ function setupPDFExport(buttonId, rangeStart, rangeEnd, fileName) {
 }
 
 // Setup buttons
+setupPDFExport("export-all", 0, 27, "zeugnisse-1-27.pdf");
 setupPDFExport("export-1", 0, 10, "zeugnisse-1-10.pdf");
 setupPDFExport("export-2", 10, 20, "zeugnisse-11-20.pdf");
 setupPDFExport("export-3", 20, 27, "zeugnisse-21-27.pdf");

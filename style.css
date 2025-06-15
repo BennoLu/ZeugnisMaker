@@ -43,7 +43,7 @@
 }
 
 .wrapp-fill{
-	margin-top: 140px;
+	margin-top: 200px;
 	display: flex;
 	flex-direction:row;
 	gap: 0.8em;
@@ -104,12 +104,16 @@
 
 button{
 	height: 45px;
-	font-size: 18px;
-	width: 140px;
+	font-size: 17px;
+	width: 120px;
 	background: #48484b;
 	color: white;
 	border: none;
 	border-radius: 6px;
+}
+
+.light{
+	opacity: 0.9;
 }
 
 
