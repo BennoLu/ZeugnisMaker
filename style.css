@@ -94,9 +94,10 @@
 
 .button_container {
 	z-index: 100;
+	flex-direction: column;
 	display: flex;
 	gap: 10px;
-	position: fixed;
+	position: absolute;
 	margin-top: 1em;
 	border: none;
 }
@@ -148,6 +149,7 @@ body {
 
 .left {
 	background: #eef3f0;
+	position: relative;
 	height: 100vh;
 	overflow-y: auto;
 	

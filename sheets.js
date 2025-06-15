@@ -6,13 +6,17 @@ const sheets = [
 const sheetId = "1qneoS-kQ01f1GdGn3wpKWeIs_BCiwxTgpXHMitmcnXg";
 const alleSheetsDiv = document.getElementById('alle-sheets');
 
-// Function to load and render a single sheet
+// Funktion zum Laden und Anzeigen eines Sheets
 async function loadSheet(sheet) {
 	const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${sheet.gid}`;
 	try {
 		const response = await fetch(url);
 		const csv = await response.text();
-		const rows = csv.split('\n').map(line => line.split(','));
+
+		// PapaParse verwenden, um CSV korrekt zu parsen
+		const parsed = Papa.parse(csv, { skipEmptyLines: true });
+		const rows = parsed.data;
+
 		const maxSpalten = Math.max(...rows.map(r => r.length));
 		const sheetName = (rows[0] && rows[0][0]) ? rows[0][0].trim() : 'Unbenanntes Blatt';
 
@@ -61,7 +65,7 @@ async function loadSheet(sheet) {
 	}
 }
 
-// Sequentially load sheets
+// Blätter nacheinander laden
 async function loadSheetsInOrder() {
 	for (const sheet of sheets) {
 		await loadSheet(sheet);

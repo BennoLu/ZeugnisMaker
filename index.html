@@ -6,6 +6,8 @@
 	<link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
 
 
 </head>
@@ -32,9 +34,12 @@
 		</div>
 
 		<div class="button_container">
-			<button id="export-1" class="button">PDF 1–10</button>
-			<button id="export-2" class="button">PDF 11–20</button>
-			<button id="export-3" class="button">PDF 21–27</button>
+			<label for="teacher-name-input">PDF erstellen:</label>
+			<div>
+				<button id="export-1" class="button">Kind 1–10</button>
+				<button id="export-2" class="button">Kind 11–20</button>
+				<button id="export-3" class="button">Kind 21–27</button>
+			</div>
 		</div>	
     </div>
 	<div class="bottom" id="alle-sheets"></div>
