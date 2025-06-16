@@ -25,7 +25,7 @@ function setupPDFExport(buttonId, rangeStart, rangeEnd, fileName) {
 			page.classList.add("pdf-page");
 
 			const bg = document.createElement("img");
-			bg.src = "BG.png";
+			bg.src = "../BG.png";
 			bg.classList.add("background-image");
 			page.appendChild(bg);
 

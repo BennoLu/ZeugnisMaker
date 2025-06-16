@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Kompetenzformular</title>
+	<link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Manjari&display=swap" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+
+
+</head>
+<body data-sheet-id="1qneoS-kQ01f1GdGn3wpKWeIs_BCiwxTgpXHMitmcnXg" data-sheet-gids="0,630509827">
+
+<link rel="preload" href="BG.png" as="image">
+<div class="section left">
+    <div class="top">
+		<div class="wrapp-fill">
+			<div>
+				<label for="class-name-input">Klasse:</label><br>
+				<input type="text" class="class-name" placeholder="z. B. 4a">
+			</div>
+
+			<div>
+				<label for="teacher-name-input">Lehrkraft:</label><br>
+				<input type="text" class="teacher-name" placeholder="Name">
+			</div>
+
+			<div>
+				<label for="date-name-input">Datum:</label><br>
+				<input type="date" class="date-field">
+			</div>
+		</div>
+
+		<div class="button_container">
+			<label for="teacher-name-input">PDF erstellen:</label>
+			<div>
+				<button id="export-1" class="button">Kind 1–10</button>
+				<button id="export-2" class="button">Kind 11–20</button>
+				<button id="export-3" class="button">Kind 21–27</button>
+			</div>
+		</div>	
+    </div>
+	<div class="bottom" id="alle-sheets"></div>
+</div>
+
+<div class="section right">
+	<div class="kind-block" data-kind="1">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div><p>Kompetenz 1</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+			<div><p>Kompetenz 2</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+			<div><p>Kompetenz 3</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+			<div><p>Kompetenz 4</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+			<div><p>Kompetenz 5</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div><p>Lernziel 1</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+			<div><p>Lernziel 2</p><div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea></div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="2">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="3">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="4">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="5">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="6">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="7">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="8">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="9">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="10">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="11">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="12">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="13">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="14">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="15">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="16">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="17">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="18">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="19">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="20">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="21">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="22">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="23">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="24">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="25">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="26">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+	<div class="kind-block" data-kind="27">
+		<textarea class="kind-name" placeholder="Name..."></textarea>
+		<div class="kompetenzbereich">
+			<h2>Kompetenzen</h2>
+			<div>
+				<p>Kompetenz 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 3</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 4</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Kompetenz 5</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+		<div class="lernzielbereich">
+			<h2>Lernziele</h2>
+			<div>
+				<p>Lernziel 1</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+			<div>
+				<p>Lernziel 2</p>
+				<div class="dropzone sortable"></div><textarea placeholder="Alternativ: Hier schreiben..."></textarea>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div id="pdf-container" style="display: none;"></div>
+<script src="../sheets.js"></script>
+<script src="../script.js"></script>
+<script src="../color.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script src="https://unpkg.com/pdf-lib/dist/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<script src="../html2pdf-export.js"></script>
+
+</body>
+</html>

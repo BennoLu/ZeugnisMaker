@@ -1,10 +1,9 @@
-const sheets = [
-	{ gid: "0" },
-	{ gid: "630509827" }
-];
-
-const sheetId = "1qneoS-kQ01f1GdGn3wpKWeIs_BCiwxTgpXHMitmcnXg";
 const alleSheetsDiv = document.getElementById('alle-sheets');
+
+
+const body = document.body;
+const sheetId = body.dataset.sheetId;
+const gidList = body.dataset.sheetGids?.split(',').map(gid => ({ gid: gid.trim() })) || [];
 
 // Funktion zum Laden und Anzeigen eines Sheets
 async function loadSheet(sheet) {
@@ -67,7 +66,7 @@ async function loadSheet(sheet) {
 
 // Blätter nacheinander laden
 async function loadSheetsInOrder() {
-	for (const sheet of sheets) {
+	for (const sheet of gidList) {
 		await loadSheet(sheet);
 	}
 }
